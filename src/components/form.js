@@ -10,9 +10,31 @@ const UserForm = (props)=>{
         const newUser = {username, email, password};
         console.log ("Welcome", newUser);
     };
+    const nameValid = () =>{
+        if (username.length<2){
+            return "Your name is too short.";
+        } else{
+            return "";
+        }
+        }
+    const emailValid = () =>{
+            if (email.length<5){
+                return "Your email is too short.";
+            } else{
+                return "";
+            }
+            }
+        const pwValid = () =>{
+            if (password.length<8){
+                return "Your password is too short.";
+            } else{
+            return "";
+            }
+            }
 
     return(
         <div>
+        <h3>{nameValid()} {emailValid()}{pwValid()}</h3>
         <form onSubmit = {createUser}>
             <div>
                 <label>Username: </label>
